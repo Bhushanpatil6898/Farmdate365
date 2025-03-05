@@ -1,0 +1,33 @@
+
+/* Ensure the page takes up the full height and centers the loading spinner */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+  }
+  
+  .wheel-and-hamster {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .loading-text {
+    position: absolute;
+    bottom: -50px; /* Adjust to place text right at the bottom edge of the wheel */
+    font-size: 1.5em;
+    color: #0e6da4;
+    font-weight: bold;
+    text-align: center;
+  
+  }
+  
+  
