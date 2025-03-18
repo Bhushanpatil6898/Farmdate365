@@ -35,6 +35,8 @@ const authReducer = createSlice({
    
     setUserdata: (state, actions) => {
       const { data } = actions.payload;
+      console.log("call",actions.payload);
+      
       state.userdata= data; // Store bill data in the state
     },
     setNotificationdata: (state, actions) => {

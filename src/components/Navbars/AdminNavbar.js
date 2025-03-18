@@ -10,10 +10,19 @@ import {
   Media,
   Nav
 } from "reactstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AdminNavbar = (props) => {
-  const { logout } = useUser();
+ 
+   const{getuser,userdata,logout}=useUser();
+
+  
+    useEffect(() => {
+    
+         getuser();
+    
+    }, []);
+   
   const [dropdownOpen, setDropdownOpen] = useState(false); // State to control the dropdown
 
   // Toggle dropdown manually to handle mobile issues
@@ -28,7 +37,9 @@ const AdminNavbar = (props) => {
     logout();
     setDropdownOpen(false);
   };
-
+console.log('====================================');
+console.log(userdata);
+console.log('====================================');
   return (
     <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
       <Container fluid>
@@ -36,7 +47,7 @@ const AdminNavbar = (props) => {
           className="h1 mb-0 text-white text-uppercase d-none d-lg-inline-block btn btn-outline-success px-4 py-2 rounded-3 transition-all hover:bg-success"
           to="/"
         >
-          MyFARM
+      {userdata?.farmName}
         </Link>
 
         <Nav className="align-items-center d-none d-md-flex" navbar>

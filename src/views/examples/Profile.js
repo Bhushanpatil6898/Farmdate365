@@ -24,8 +24,8 @@ const Profile = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await getuser(); // Call the getconnect function
-      setIsLoading(false); // Set loading to false once data is fetched
+      await getuser();
+      setIsLoading(false); 
     };
 
     fetchData();
