@@ -10,10 +10,12 @@ import { login} from "store/auth/reduser.slice";
 export const useUser = () => {
     const navigation=useNavigate();
     const[userdata,setUserdata]=useState();
+    const[farmdata,setFarmdata]=useState();
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
     return {
         userdata,
+        farmdata,
         getconnect: async () => {
             try {
                 setLoading(true)
@@ -110,6 +112,28 @@ export const useUser = () => {
             }
         },
 
+        
+        uploadfarmdata:async(payload)=>{
+
+            try{
+                setLoading(true)
+                const response=await UserRepository.uploaddata(payload);
+                if (response.status === 200) {
+                    toast.success(response.data?.message)
+                 }
+                 if (response.status === 401) {
+                     toast.warn(response.data?.message)
+                 }
+                  else{
+                     console.error("Connection failed with status:", response.status);
+                 }
+                 return response;
+
+            }catch(error){
+                console.error("Error while  uploading data:", error);
+            }
+        },
+
         getuser: async () => {
             try {
                 setLoading(true)
@@ -119,6 +143,26 @@ export const useUser = () => {
                     setUserdata(response.data.user)
                     setLoading(false);
     //   dispatch(setUserdata({data:response.data.user}))
+                    
+                } else {
+                    console.error("Connection failed with status:", response.status);
+                }
+                setLoading(false);
+            } catch (error) {
+                console.error("Error while connecting:", error);
+            }
+        },
+        getfarmdata: async () => {
+            try {
+            
+                
+                setLoading(true)
+                const response = await UserRepository.FarmData(); 
+                if (response.status === 200) {
+                    
+                   setFarmdata(response.data.farmdata
+                   )
+                    setLoading(false);
                     
                 } else {
                     console.error("Connection failed with status:", response.status);

@@ -31,7 +31,8 @@ import { useUser } from "hook/user/useUser";
 
 const Sidebar = (props) => {
   const [collapseOpen, setCollapseOpen] = useState(false);
-  const { logout } = useUser();
+  const { logout ,isAuthenticated} = useUser();
+  
   // Function to handle active route
   const activeRoute = (routeName) => {
     return props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
@@ -54,18 +55,25 @@ const Sidebar = (props) => {
   // Generate sidebar links dynamically
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
-      return (
-        <NavItem key={key}>
-          <NavLink
-            to={prop.layout + prop.path}
-            tag={NavLinkRRD}
-            onClick={closeCollapse}
-          >
-            <i className={prop.icon} />
-            {prop.name}
-          </NavLink>
-        </NavItem>
-      );
+      // Only render links if the user is authenticated, excluding "Login" and "Register"
+      if (prop.name === "Login" || prop.name === "Register"||prop.name==="User Profile") {
+        if (isAuthenticated) {
+          return null; 
+        }
+      } else {
+        return (
+          <NavItem key={key}>
+            <NavLink
+              to={prop.layout + prop.path}
+              tag={NavLinkRRD}
+              onClick={closeCollapse}
+            >
+              <i className={prop.icon} />
+              {prop.name}
+            </NavLink>
+          </NavItem>
+        );
+      }
     });
   };
 

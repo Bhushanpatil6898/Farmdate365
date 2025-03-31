@@ -11,7 +11,7 @@ class UserRepository {
     }
     async otpgenrate(payload) {
         try {
-            const response = await repository.post('/otp',payload);
+            const response = await repository.post('/otp', payload);
             return response;
         } catch (error) {
             return error;
@@ -19,7 +19,7 @@ class UserRepository {
     }
     async login(payload) {
         try {
-            const response = await repository.post('/login',payload);
+            const response = await repository.post('/login', payload);
             return response;
         } catch (error) {
             return error;
@@ -27,7 +27,7 @@ class UserRepository {
     }
     async logout(payload) {
         try {
-            const response = await repository.post('/logout',payload);
+            const response = await repository.post('/logout', payload);
             return response;
         } catch (error) {
             return error;
@@ -35,7 +35,7 @@ class UserRepository {
     }
     async registration(payload) {
         try {
-            const response = await repository.post('/register',payload);
+            const response = await repository.post('/register', payload);
             return response;
         } catch (error) {
             return error;
@@ -48,6 +48,25 @@ class UserRepository {
         } catch (error) {
             return error;
         }
+    }
+    async FarmData() {
+        try {
+           
+            const response = await repository.get('user//getfarmdata');
+            return response;
+        } catch (error) {
+            return error;
+        }
+    }
+    async uploaddata(payload) {
+        try {
+            const response = await repository.post('/user/uploadfarmdata',payload);
+            return response;
+        }
+        catch (erorr) {
+return erorr;
+        }
+
     }
 }
 

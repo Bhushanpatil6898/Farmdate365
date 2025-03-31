@@ -7,7 +7,7 @@ const Header = () => {
       <div className="header pb-8 pt-4 pt-lg-8 "
              style={{
               minHeight: "700px",
-              backgroundImage: "url('https://images.pexels.com/photos/1816699/pexels-photo-1816699.jpeg?auto=compress&cs=tinysrgb&w=600')",
+              backgroundImage: "url('https://cdn.pixabay.com/photo/2017/10/29/15/58/trees-2900064_1280.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center bottom",
             }}>

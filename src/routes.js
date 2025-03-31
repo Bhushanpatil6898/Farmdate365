@@ -1,12 +1,13 @@
 
 import Index from "views/Index.js";
 import Profile from "views/examples/Profile.js";
-import Maps from "views/examples/Maps.js";
+import Maps from "views/examples/uploadfarmdata";
 import Register from "views/examples/Register.js";
 import Login from "views/examples/Login.js";
 import Tables from "views/examples/Tables.js";
 import Icons from "views/examples/Icons.js";
 import AboutUs from "views/examples/about.js";
+import AllFarmDataPage from "views/examples/farmdata";
 
 
 
@@ -60,6 +61,13 @@ var routes = [
   //   component: <Tables />,
   //   layout: "/admin",
   // },
+   {
+    path: "/farmdata",
+    name: "FarmData",
+    icon: "ni ni-bullet-list-67 text-red",
+    component: <AllFarmDataPage />,
+    layout: "/admin",
+  },
   {
     path: "/login",
     name: "Login",

@@ -37,15 +37,14 @@ const AdminNavbar = (props) => {
     logout();
     setDropdownOpen(false);
   };
-console.log('====================================');
-console.log(userdata);
-console.log('====================================');
+
   return (
     <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
       <Container fluid>
         <Link
-          className="h1 mb-0 text-white text-uppercase d-none d-lg-inline-block btn btn-outline-success px-4 py-2 rounded-3 transition-all hover:bg-success"
+          className="h1 mb-0  text-uppercase bg-white d-none d-lg-inline-block btn btn-outline-success px-4 py-2 rounded-3 transition-all hover:bg-success"
           to="/"
+          style={{color:"orange"}}
         >
       {userdata?.farmName}
         </Link>
@@ -61,7 +60,7 @@ console.log('====================================');
                   />
                 </span>
                 <Media className="ml-2 d-none d-lg-block">
-                  <span className="mb-0 text-sm font-weight-bold">
+                  <span className="h1 mb-0  text-uppercase bg-white d-none d-lg-inline-block btn btn-outline-success px-4 py-2 rounded-3 transition-all hover:bg-success"  style={{color:"orange"}}>
                     Bhushan Patil
                   </span>
                 </Media>
