@@ -19,12 +19,12 @@ import { useUser } from "hook/user/useUser";
 import { useEffect, useState } from "react";
 
 const Profile = () => {
-  const{getuser,userdata}=useUser();
+  const{getfarmdata,userdata}=useUser();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      await getuser();
+      await getfarmdata();
       setIsLoading(false); 
     };
 

@@ -11,11 +11,13 @@ export const useUser = () => {
     const navigation=useNavigate();
     const[userdata,setUserdata]=useState();
     const[farmdata,setFarmdata]=useState();
+    const[farmersdata,setFarmersdata]=useState();
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
     return {
         userdata,
         farmdata,
+        farmersdata,
         getconnect: async () => {
             try {
                 setLoading(true)
@@ -142,7 +144,7 @@ export const useUser = () => {
                     
                     setUserdata(response.data.user)
                     setLoading(false);
-    //   dispatch(setUserdata({data:response.data.user}))
+      dispatch(setUserdata({data:response.data.user}))
                     
                 } else {
                     console.error("Connection failed with status:", response.status);
@@ -162,6 +164,27 @@ export const useUser = () => {
                     
                    setFarmdata(response.data.farmdata
                    )
+                    setLoading(false);
+                    
+                } else {
+                    console.error("Connection failed with status:", response.status);
+                }
+                setLoading(false);
+            } catch (error) {
+                console.error("Error while connecting:", error);
+            }
+        },
+        getfarmersdata: async () => {
+            try {
+            
+                
+                setLoading(true)
+                const response = await UserRepository.FarmersData(); 
+                if (response.status === 200) {
+                    
+                    setFarmersdata(response.data.farmers
+                    )
+                 
                     setLoading(false);
                     
                 } else {

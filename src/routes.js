@@ -40,13 +40,7 @@ var routes = [
     component: <Maps />,
     layout: "/admin",
   },
-   {
-    path: "/about",
-    name: "AboutUs",
-    icon: "ni ni-pin-3 text-orange",
-    component: <AboutUs/>,
-    layout: "/admin",
-  },
+  
   {
     path: "/user-profile",
     name: "User Profile",
@@ -54,13 +48,13 @@ var routes = [
     component: <Profile />,
     layout: "/admin",
   },
-  // {
-  //   path: "/tables",
-  //   name: "Data",
-  //   icon: "ni ni-bullet-list-67 text-red",
-  //   component: <Tables />,
-  //   layout: "/admin",
-  // },
+  {
+    path: "/tables",
+    name: "Data",
+    icon: "ni ni-bullet-list-67 text-red",
+    component: <Tables />,
+    layout: "/admin",
+  },
    {
     path: "/farmdata",
     name: "FarmData",
@@ -81,6 +75,13 @@ var routes = [
     icon: "ni ni-circle-08 text-pink",
     component: <Register />,
     layout: "/auth",
+  },
+  {
+    path: "/about",
+    name: "AboutUs",
+    icon: "ni ni-planet text-blue",
+    component: <AboutUs/>,
+    layout: "/admin",
   },
 ];
 export default routes;

@@ -18,7 +18,6 @@ const AdminNavbar = (props) => {
 
   
     useEffect(() => {
-    
          getuser();
     
     }, []);

@@ -873,7 +873,7 @@ const Tables = () => {
           <div className="col">
             <Card className="bg-default shadow">
               <CardHeader className="bg-transparent border-0">
-                <h3 className="text-white mb-0">Card tables</h3>
+                <h3 className="text-white mb-0">Card tablesss</h3>
               </CardHeader>
               <Table
                 className="align-items-center table-dark table-flush"

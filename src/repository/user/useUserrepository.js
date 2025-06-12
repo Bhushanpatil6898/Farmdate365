@@ -52,7 +52,16 @@ class UserRepository {
     async FarmData() {
         try {
            
-            const response = await repository.get('user//getfarmdata');
+            const response = await repository.get('user/getfarmdata');
+            return response;
+        } catch (error) {
+            return error;
+        }
+    }
+    async FarmersData() {
+        try {
+           
+            const response = await repository.get('user/farmers');
             return response;
         } catch (error) {
             return error;

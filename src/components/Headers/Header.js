@@ -1,6 +1,6 @@
 
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
-
+import { FaSeedling, FaChartLine, FaCloudSun, FaBriefcase } from 'react-icons/fa';
 const Header = () => {
   return (
     <>
@@ -130,7 +130,115 @@ const Header = () => {
                 </Card>
               </Col>
             </Row>
+            <Row>
+        {/* Current Crop Yield Card */}
+        <Col lg="6" xl="3">
+          <Card className="card-stats mb-4 mb-xl-0">
+            <CardBody>
+              <Row>
+                <div className="col">
+                  <CardTitle tag="h5" className="text-uppercase text-muted mb-0">
+                    Current Crop Yield
+                  </CardTitle>
+                  <span className="h2 font-weight-bold mb-0">15,500 KG</span>
+                </div>
+                <Col className="col-auto">
+                  <div className="icon icon-shape bg-success text-white rounded-circle shadow">
+                    <FaSeedling />
+                  </div>
+                </Col>
+              </Row>
+              <p className="mt-3 mb-0 text-muted text-sm">
+                <span className="text-success mr-2">
+                  <i className="fa fa-arrow-up" /> 5% Increase
+                </span>
+                <span className="text-nowrap">Since last harvest</span>
+              </p>
+            </CardBody>
+          </Card>
+        </Col>
 
+        {/* Farm Income Card */}
+        <Col lg="6" xl="3">
+          <Card className="card-stats mb-4 mb-xl-0">
+            <CardBody>
+              <Row>
+                <div className="col">
+                  <CardTitle tag="h5" className="text-uppercase text-muted mb-0">
+                    Farm Income
+                  </CardTitle>
+                  <span className="h2 font-weight-bold mb-0">$12,750</span>
+                </div>
+                <Col className="col-auto">
+                  <div className="icon icon-shape bg-info text-white rounded-circle shadow">
+                    <FaBriefcase />
+                  </div>
+                </Col>
+              </Row>
+              <p className="mt-3 mb-0 text-muted text-sm">
+                <span className="text-success mr-2">
+                  <i className="fa fa-arrow-up" /> 10% Increase
+                </span>
+                <span className="text-nowrap">Since last month</span>
+              </p>
+            </CardBody>
+          </Card>
+        </Col>
+
+        {/* Weather Forecast Card */}
+        <Col lg="6" xl="3">
+          <Card className="card-stats mb-4 mb-xl-0">
+            <CardBody>
+              <Row>
+                <div className="col">
+                  <CardTitle tag="h5" className="text-uppercase text-muted mb-0">
+                    Weather Forecast
+                  </CardTitle>
+                  <span className="h2 font-weight-bold mb-0">Sunny 25°C</span>
+                </div>
+                <Col className="col-auto">
+                  <div className="icon icon-shape bg-warning text-white rounded-circle shadow">
+                    <FaCloudSun />
+                  </div>
+                </Col>
+              </Row>
+              <p className="mt-3 mb-0 text-muted text-sm">
+                <span className="text-success mr-2">
+                  <i className="fa fa-arrow-up" /> 2% Warmer
+                </span>
+                <span className="text-nowrap">Than average temperature</span>
+              </p>
+            </CardBody>
+          </Card>
+        </Col>
+
+        {/* Upcoming Tasks Card */}
+        <Col lg="6" xl="3">
+          <Card className="card-stats mb-4 mb-xl-0">
+            <CardBody>
+              <Row>
+                <div className="col">
+                  <CardTitle tag="h5" className="text-uppercase text-muted mb-0">
+                    Upcoming Tasks
+                  </CardTitle>
+                  <span className="h2 font-weight-bold mb-0">Next Harvest</span>
+                </div>
+                <Col className="col-auto">
+                  <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
+                    <FaChartLine />
+                  </div>
+                </Col>
+              </Row>
+              <p className="mt-3 mb-0 text-muted text-sm">
+                <span className="text-warning mr-2">
+                  <i className="fas fa-arrow-down" /> 10% Less Yield
+                </span>
+                <span className="text-nowrap">Expected this season</span>
+              </p>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
           </div>
         </Container>
       </div>
