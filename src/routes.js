@@ -1,4 +1,3 @@
-
 import Index from "views/Index.js";
 import Profile from "views/examples/Profile.js";
 import Maps from "views/examples/uploadfarmdata";
@@ -8,8 +7,6 @@ import Tables from "views/examples/Tables.js";
 import Icons from "views/examples/Icons.js";
 import AboutUs from "views/examples/about.js";
 import AllFarmDataPage from "views/examples/farmdata";
-
-
 
 var routes = [
   {
@@ -33,14 +30,14 @@ var routes = [
   //   component: <Maps />,
   //   layout: "/admin",
   // },
-   {
+  {
     path: "/maps",
     name: "Crop Management",
     icon: "ni ni-pin-3 text-orange",
     component: <Maps />,
     layout: "/admin",
   },
-  
+
   {
     path: "/user-profile",
     name: "User Profile",
@@ -55,7 +52,7 @@ var routes = [
     component: <Tables />,
     layout: "/admin",
   },
-   {
+  {
     path: "/farmdata",
     name: "FarmData",
     icon: "ni ni-bullet-list-67 text-red",
@@ -80,8 +77,9 @@ var routes = [
     path: "/about",
     name: "AboutUs",
     icon: "ni ni-planet text-blue",
-    component: <AboutUs/>,
+    component: <AboutUs />,
     layout: "/admin",
   },
 ];
 export default routes;
+//
